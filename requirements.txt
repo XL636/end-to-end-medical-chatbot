@@ -1,0 +1,5 @@
+ctransformer == 0.2.27 #newest one, Python bindings for the Transformer models implemented in C/C++ using GGML library.
+sentence-transformers == 3.4.1 # I will use this free embedding model or you can just use openai api embedding model
+pinecone-client 
+langchain == 0.3.19
+flask
