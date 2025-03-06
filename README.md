@@ -12,7 +12,7 @@ conda init bash, and reopen git bash
 conda activate mchatbot
 '''
 '''
-Create ignore file - touch .gitignore
+Create ignore file > touch .gitignore
 '''
 '''
 write the requirements.txt (pip install -r requirements.txt)
