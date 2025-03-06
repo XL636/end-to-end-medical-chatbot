@@ -1,7 +1,7 @@
 # This is about medical chatbot
 
 ## steps to the project
-
+## First part
 ''' bash, create new environment
 conda create -n mchatbot python=3.8 -y
 '''
@@ -35,5 +35,7 @@ manually upsert chunks into Pinecone
 from langchain_pinecone import Pinecone to create a inference to Pinecone index
 '''
 '''
-Finally use RetrievalQA to combine llm and retriever
+Finally use RetrievalQA to combine llm and retriever, I am using LLM, you can use differnt Free LLM from Huggingface
 '''
+
+## Second Part
