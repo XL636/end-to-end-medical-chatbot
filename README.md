@@ -22,7 +22,6 @@ create .env
 '''
 
 
-
 '''
 connect Pinecone, load data and turn into different chunks. 
 '''
@@ -39,3 +38,17 @@ Finally use RetrievalQA to combine llm and retriever, I am using LLM, you can us
 '''
 
 ## Second Part
+'''
+Create scr that inluce differen module you need to use in other py module
+'''
+'''
+Create setup.py to write basic information for this project and make sure you can use local package 
+'''
+Create a store_index for store data.
+'''
+'''
+Create app.py to run the website
+'''
+'''
+you also need to create HTLM,CSS file with flask
+'''

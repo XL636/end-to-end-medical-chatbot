@@ -1,7 +1,7 @@
-from langchain.document_loaders import PyPDFLoader, DirectoryLoader
+from langchain_community.document_loaders import PyPDFLoader, DirectoryLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings
-from langchain.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 from dotenv import load_dotenv
 import os
 
@@ -37,4 +37,21 @@ def download_OpenAIEmbedings():
 def download_hugging_face_embeddings():
     embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
     return embeddings
- 
+
+# Upsert data into pinecone
+def pinecone_upsert(chunks,embeddings):
+    vectors = []
+    for i, chunk in enumerate(chunks):
+        text = chunk.page_content
+        values = embeddings.embed_query(text)
+        metadata = chunk.metadata
+        metadata['text'] = text
+
+        vector_data = {
+            "id":f"chunk{i}",
+            "values":values,
+            "metadata":metadata
+        }
+        vectors.append(vector_data)
+    
+    return vectors
